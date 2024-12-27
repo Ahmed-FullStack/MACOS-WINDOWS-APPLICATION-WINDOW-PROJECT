@@ -1,0 +1,13 @@
+body {
+	background-color: hsl(217 20% 25%);
+}
+:root {
+	scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+	width: 0;
+}
+:is([data-select], #data-select, #override-user-select) {
+	user-select: text;
+}

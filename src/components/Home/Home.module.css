@@ -1,0 +1,178 @@
+.card {
+	width: min(95%, 560px);
+	min-height: 300px;
+	isolation: isolate;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	margin: 5em auto 51em;
+	padding: 3.5em 1em 1em;
+	overflow-y: hidden;
+	transition: transform 200ms ease, width 200ms ease-out;
+	background-color: hsl(217 25% 20% / 0.7);
+	color: #fff;
+	position: relative;
+	-webkit-user-drag: none;
+	z-index: 8;
+}
+.apple-window-strap {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 6.5%;
+	display: flex;
+	flex-flow: row wrap;
+	align-items: flex-end;
+	justify-content: flex-start;
+	gap: 0.5em;
+	padding: 0 1em 0;
+}
+.apple-window-icons {
+	cursor: pointer;
+	width: 30px;
+	border-radius: 50%;
+	aspect-ratio: 1 / 1;
+	transition: transform 100ms ease-out;
+}
+.apple-window-icons:active {
+	transform: scale(0.85);
+}
+.red {
+	background-color: rgb(253, 119, 119);
+}
+.blue {
+	background-color: rgb(101, 153, 248);
+}
+.green {
+	background-color: rgb(119, 253, 141);
+}
+@media (hover: hover) {
+	.card:hover {
+		transform: scale(1.05);
+	}
+}
+.card > h3 {
+	font-size: 4rem;
+	margin: 0;
+	background-image: linear-gradient(
+		120deg,
+		hsl(189, 91%, 68%),
+		hsl(150, 91%, 68%),
+		hsl(360, 91%, 68%)
+	);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	transform: translate(0%, 20%);
+	opacity: 0;
+	animation: o 200ms ease-out forwards;
+}
+.card > h3::selection {
+	background-color: hsl(217 20% 25%);
+	color: rgba(255, 255, 255, 0.671);
+	border-radius: 50px;
+}
+.card.mini {
+	transform: scale(0);
+	transform-origin: left top;
+	transition: transform 200ms ease, width 200ms ease-out;
+}
+.card.maxi-transform {
+	transform: scale(0);
+	transform-origin: right top;
+	transition: transform 200ms ease, width 200ms ease-out;
+}
+.card.full {
+	width: 100%;
+	height: 100vh;
+	margin: 0;
+	align-items: center;
+	transform-origin: right bottom;
+	transition: width height 200ms ease, align-items display 800ms ease-out;
+}
+.card.full .apple-window-strap {
+	justify-content: center;
+	height: 10%;
+	transition: display align-items 200ms ease-out;
+}
+.card.full:hover {
+	transform: scale(1);
+}
+.card.full > h3:first-of-type {
+	margin-top: 1.5em;
+}
+.face-down {
+	transform: translate(0%, 0%);
+	opacity: 1;
+}
+@keyframes o {
+	100% {
+		opacity: 1;
+		transform: translate(0%, 0%);
+	}
+}
+
+@media (max-width: 37em) {
+	.apple-window-strap {
+		height: 9.5%;
+	}
+	.card > h3 {
+		font-size: 2.5rem;
+		margin: 0;
+		background-image: linear-gradient(
+			120deg,
+			hsl(189, 91%, 68%),
+			hsl(150, 91%, 68%),
+			hsl(360, 91%, 68%)
+		);
+		-webkit-background-clip: text;
+		background-clip: text;
+		color: transparent;
+		transform: translate(0%, 20%);
+		opacity: 0;
+		animation: o 200ms ease-out forwards;
+	}
+	.card.full {
+		width: 100%;
+		height: 100vh;
+		margin: 0;
+		align-items: center;
+		transition: width height 2700ms ease, align-items display 1200ms ease-out;
+	}
+	.card.full .apple-window-strap {
+		justify-content: center;
+		height: 5%;
+		transition: display align-items 1200ms ease-out;
+	}
+}
+.redo {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 150px;
+	color: #fff;
+	height: 50px;
+	padding: 0.2em 1em;
+	background-color: hsl(217 20% 40%);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border-radius: 8px;
+	align-items: center;
+	align-items: flex-start;
+	transform: translate(-50%, -50%);
+	transition: transform 100ms ease-out;
+}
+
+.redo > * {
+	pointer-events: none;
+}
+.redo:active {
+	transform: translate(-50%, -50%) scale(0.85);
+}
+.redo > * {
+	margin: 0;
+}

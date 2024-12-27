@@ -1,0 +1,25 @@
+.button {
+	border-radius: 55rem;
+	position: relative;
+	z-index: 1;
+	color: var(--text-clr);
+	background-color: transparent;
+}
+
+button::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: inherit;
+	z-index: -1;
+	background-color: hsl(0 0% 100%);
+	opacity: 0.1;
+	transition: opacity 200ms ease-out;
+}
+
+.button:hover::after {
+	opacity: 0.15;
+}

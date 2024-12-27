@@ -1,0 +1,38 @@
+.full-height {
+	width: 100%;
+}
+.form {
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+	gap: 1em;
+	padding: 2em 0 1em;
+	width: min(80%, 430px);
+	margin: 5em auto 0;
+	background-color: hsl(217 30% 45%);
+	color: #fff;
+}
+
+.label-fields {
+	width: 90%;
+	display: flex;
+	align-items: center;
+	margin: 0 auto;
+}
+
+.input {
+	background-color: hsl(217 30% 20%);
+	color: #fff;
+	outline: none;
+	margin-left: auto;
+}
+
+.button-holder {
+	margin-top: 0.4em;
+}
+
+.btn {
+	background-color: hsl(217 100% 80%);
+	color: var(--text-inverse-clr);
+	padding: 0.7em 1.3em;
+}
